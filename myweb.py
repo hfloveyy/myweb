@@ -2,7 +2,7 @@
 
 import sae.const
 from flask import Flask
-from flaskext.sqlalchemy import SQLAlchemy
+from flask.ext.sqlalchemy import SQLAlchemy
 from model import User
 from database import db
 
@@ -36,5 +36,4 @@ def hello_world2():
 
 
 if __name__ == '__main__':
-
     app.run(debug=True)

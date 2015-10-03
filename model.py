@@ -1,6 +1,5 @@
 # _*_ coding:utf-8 _*_
 from datetime import datetime
-from flaskext.sqlalchemy import SQLAlchemy
 from database import db
 
 
