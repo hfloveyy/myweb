@@ -1,6 +1,6 @@
 # _*_ coding:utf-8 _*_
 from datetime import datetime
-from database import db
+from myweb import db
 
 
 class User(db.Model):

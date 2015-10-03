@@ -2,7 +2,7 @@
 
 import sae.const
 from flask import Flask
-from flaskext.sqlalchemy import SQLAlchemy
+from flask.ext.sqlalchemy import SQLAlchemy
 #from model import User
 #from database import db
 
@@ -12,7 +12,6 @@ from flaskext.sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] =  'mysql://%s:%s@%s:%s/%s' % (sae.const.MYSQL_USER, sae.const.MYSQL_PASS, sae.const.MYSQL_HOST, sae.const.MYSQL_PORT, sae.const.MYSQL_DB)
 db = SQLAlchemy(app)
-
 
 
 class User(db.Model):
@@ -26,6 +25,7 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
+
 
 
 
