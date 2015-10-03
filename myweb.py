@@ -2,7 +2,7 @@
 
 import sae.const
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
+from flaskext.sqlalchemy import SQLAlchemy
 #from model import User
 #from database import db
 
