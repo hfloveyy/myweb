@@ -38,10 +38,12 @@ def hello_world():
 def hello_world2():
     return 'Hello World2!'
 
-admin = User('admin', 'admin@example.com')
-db.session.add(admin)
-db.session.commit()
+
 
 if __name__ == '__main__':
     db.create_all()
+
+    admin = User('admin', 'admin@example.com')
+    db.session.add(admin)
+    db.session.commit()
     app.run(debug=True)
