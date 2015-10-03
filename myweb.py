@@ -3,7 +3,7 @@
 import sae.const
 from flask import Flask
 from flaskext.sqlalchemy import SQLAlchemy
-from .models import User
+from .model import User
 from . import db
 
 
