@@ -1,7 +1,20 @@
 # _*_ coding:utf-8 _*_
-from flask import Flask
-import sae.const
+from datetime import datetime
 from flaskext.sqlalchemy import SQLAlchemy
+from .database import db
+
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True)
+    email = db.Column(db.String(120), unique=True)
+
+    def __init__(self, username, email):
+        self.username = username
+        self.email = email
+
+    def __repr__(self):
+        return '<User %r>' % self.username
 
 
 
