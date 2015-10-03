@@ -2,7 +2,10 @@
 from flask import Flask
 import sae.const
 import mysql.connector 
- 
+
+
+conn = mysql.connector.connect(user='root', password='password', database='test', use_unicode=True)
+
 db = web.database(
     dbn='mysql',
     host=sae.const.MYSQL_HOST,
