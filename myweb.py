@@ -33,10 +33,10 @@ class User(db.Model):
 
 @app.route('/')
 def hello_world():
-    #db.create_all()
-    #admin = User('admin', 'admin@example.com')
-    #db.session.add(admin)
-    #db.session.commit()
+    db.create_all()
+    admin = User('admin', 'admin@example.com')
+    db.session.add(admin)
+    db.session.commit()
     return 'Hello World!'
 
 @app.route('/hello')
