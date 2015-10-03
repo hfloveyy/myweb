@@ -32,6 +32,10 @@ class User(db.Model):
 
 @app.route('/')
 def hello_world():
+    db.create_all()
+    admin = User('admin', 'admin@example.com')
+    db.session.add(admin)
+    db.session.commit()
     return 'Hello World!'
 
 @app.route('/hello')
@@ -41,9 +45,5 @@ def hello_world2():
 
 
 if __name__ == '__main__':
-    db.create_all()
 
-    admin = User('admin', 'admin@example.com')
-    db.session.add(admin)
-    db.session.commit()
     app.run(debug=True)
