@@ -29,8 +29,8 @@ def hello_world():
     
     
     
-    db.session.add(admin)
-    db.session.commit()
+    #db.session.add(admin)
+    #db.session.commit()
     return 'Hello World!'
 
 @app.route('/hello')
