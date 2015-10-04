@@ -27,7 +27,7 @@ from models import User
 
 @app.route('/')
 def index():
-    admin = User(name='Test', email='test@example.com',admin = True, password='1234567890', image='about:blank')
+    admin = User(name='Test', email='test@example.com', password='1234567890', image='about:blank')
     #db.session.add(admin)
     #db.session.commit()
     return 'Hello World!'
