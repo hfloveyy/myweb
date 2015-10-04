@@ -26,8 +26,8 @@ admin2 = User(name='Test2', email='test@example.com2', password='12345678902', i
 
 @app.route('/')
 def index():
-    
-    db.session.add(admin2)
+    admin3 = User(name='Test23', email='test@example.com32', password='123456789032', image='about:blank32')
+    db.session.add(admin3)
     db.session.commit()
     return 'Hello World!'
 
