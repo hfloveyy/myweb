@@ -28,8 +28,8 @@ admin = User(name='Test', email='test@example.com', password='1234567890', image
 @app.route('/')
 def index():
     
-    #db.session.add(admin)
-    #db.session.commit()
+    db.session.add(admin)
+    db.session.commit()
     return 'Hello World!'
 
 @app.route('/hello')
