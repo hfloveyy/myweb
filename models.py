@@ -12,15 +12,9 @@ class User(db.Model):
     image = db.Column(db.String(500), unique=True)
     created_at = db.Column(db.DateTime, unique=True)
 
-    def __init__(self, email, password, admin, name, image, created_at):
-        self.email = email
-        self.password = password
-        self.admin = admin
-        self.name = name
-        self.image = image
-        self.created_at = created_at
 
-class Blog(object):
+
+class Blog(db.Model):
     """docstring for Blog"""
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.String(50), unique=True)
@@ -30,9 +24,20 @@ class Blog(object):
     summary = db.Column(db.String(50), unique=True)
     content = db.Column(db.String(1000), unique=True)
     created_at = db.Column(db.DateTime, unique=True)
-    def __init__(self, arg):
-        super(Blog, self).__init__()
-        self.arg = arg
+
+class Comment(db.Model):
+    """docstring for Comment"""
+    id = db.Column(db.Integer, primary_key=True)
+    blog_id = db.Column(db.String(50), unique=True)
+    user_id = db.Column(db.String(50), unique=True)
+    user_name = db.Column(db.String(50), unique=True)
+    user_image = db.Column(db.String(50), unique=True)
+    content = db.Column(db.String(1000), unique=True)
+    created_at = db.Column(db.DateTime, unique=True)
+
+
+        
+
         
 
 

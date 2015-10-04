@@ -16,15 +16,18 @@ app = Flask(__name__)
 
 from database import db
 
-from models import User
+from models import User,Blog,Comment
 
-admin = User('admin', 'admin@example.com')
+db.create_all()
+
+
+admin = User(name='Test', email='test@example.com', password='1234567890', image='about:blank')
 
 
 @app.route('/')
 def hello_world():
     
-    db.create_all()
+    
     
     db.session.add(admin)
     db.session.commit()
