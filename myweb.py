@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 from database import db
 
-from models import User,Blog,Comment
+from models import User''',Blog,Comment'''
 
 #db.create_all()
 
@@ -26,7 +26,7 @@ from models import User,Blog,Comment
 
 @app.route('/')
 def index():
-
+    db.create_all()
     admin = User(name='Test', email='test@example.com',admin = True, password='1234567890', image='about:blank')
     db.session.add(admin)
     db.session.commit()
