@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 
 from database import db
-from models import User
+
 
 
 
@@ -23,7 +23,7 @@ from models import User
 
 @app.route('/')
 def hello_world():
-    
+    from models import User
     db.create_all()
     admin = User('admin', 'admin@example.com')
     db.session.add(admin)
