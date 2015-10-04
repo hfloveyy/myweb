@@ -10,7 +10,7 @@ class User(db.Model):
     admin = db.Column(db.String(50), unique=True)
     name = db.Column(db.String(50), unique=True)
     image = db.Column(db.String(500), unique=True)
-    created_at = db.Column(db.DateTime, unique=True)
+    created_at = db.Column(db.DateTime)
 
 
 
@@ -23,7 +23,7 @@ class Blog(db.Model):
     name = db.Column(db.String(50), unique=True)
     summary = db.Column(db.String(50), unique=True)
     content = db.Column(db.Text)
-    created_at = db.Column(db.DateTime, unique=True)
+    created_at = db.Column(db.DateTime)
 
 class Comment(db.Model):
     """docstring for Comment"""
@@ -33,7 +33,7 @@ class Comment(db.Model):
     user_name = db.Column(db.String(50), unique=True)
     user_image = db.Column(db.String(500))
     content = db.Column(db.Text)
-    created_at = db.Column(db.DateTime, unique=True)
+    created_at = db.Column(db.DateTime)
 
 
         
