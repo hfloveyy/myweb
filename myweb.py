@@ -20,16 +20,16 @@ from models import User,Blog,Comment
 
 
 
-admin2 = User(name='Test2', email='test@example.com2', password='12345678902', image='about:blank2')
 
 
 
 @app.route('/')
 def index():
-    admin3 = User(name='Test23', email='test@example.com32', password='123456789032', image='about:blank32')
-    db.session.add(admin3)
-    db.session.commit()
-    return 'Hello World!'
+    #admin3 = User(name='Test23', email='test@example.com32', password='123456789032', image='about:blank32')
+    #db.session.add(admin3)
+    #db.session.commit()
+    admin = User.query.filter_by(username='admin').first()
+    return admin.name
 
 @app.route('/hello')
 def hello_world2():
