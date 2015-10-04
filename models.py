@@ -6,10 +6,10 @@ from database import db
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True)
-    password = db.Column(db.String(50), unique=True)
+    password = db.Column(db.String(50))
     admin = db.Column(db.Boolean, unique=True)
     name = db.Column(db.String(50), unique=True)
-    image = db.Column(db.String(500), unique=True)
+    image = db.Column(db.String(500))
     created_at = db.Column(db.DateTime)
 
     def __init__(self, email,password,admin,name,image,created_at):
@@ -27,7 +27,7 @@ class Blog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.String(50), unique=True)
     user_name = db.Column(db.String(50), unique=True)
-    user_image = db.Column(db.String(50), unique=True)
+    user_image = db.Column(db.String(500))
     name = db.Column(db.String(50), unique=True)
     summary = db.Column(db.String(50), unique=True)
     content = db.Column(db.Text)
@@ -41,6 +41,8 @@ class Blog(db.Model):
         self.summary = summary
         self.content = content
         self.created_at = created_at
+
+
 
 class Comment(db.Model):
     """docstring for Comment"""
