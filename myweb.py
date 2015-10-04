@@ -3,7 +3,7 @@
 import sae.const
 from flask import Flask
 from flaskext.sqlalchemy import SQLAlchemy
-
+from flask import render_template
 
 
 
@@ -32,8 +32,9 @@ def index():
     return admin.name
 
 @app.route('/hello')
-def hello_world2():
-    return 'Hello World2!'
+@app.route('/hello/<name>')
+def hello(name=None):
+    return render_template('hello.html', name=name)
 
 
 
