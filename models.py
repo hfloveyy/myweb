@@ -11,14 +11,14 @@ class User(db.Model):
     name = db.Column(db.String(50), unique=True)
     image = db.Column(db.String(500))
     created_at = db.Column(db.DateTime)
-
+'''
     def __init__(self, email,password,admin,name,image,created_at):
         self.email = email
         self.password = password
         self.admin = admin
         self.name = name
         self.image = image
-        self.created_at = created_at
+        self.created_at = created_at'''
 
 
 '''
