@@ -27,9 +27,12 @@ from models import User,Blog,Comment
 @app.route('/')
 def hello_world():
     admin = User(name='Test', email='test@example.com', password='1234567890', image='about:blank')
-    db.session.add(admin)
-    db.session.commit()
-    return 'Hello World!'
+    if db is not None:
+        db.session.add(admin)
+        db.session.commit()
+        return 'great!'
+    else:
+        return 'Hello World!'
 
 @app.route('/hello')
 def hello_world2():
