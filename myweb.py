@@ -3,19 +3,19 @@
 import sae.const
 from flask import Flask
 from flaskext.sqlalchemy import SQLAlchemy
-from run import app
-
-from database import db
-from model import User
 
 
 
-#app = Flask(__name__)
+
+
+
+app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] =  'mysql://%s:%s@%s:%s/%s' % (sae.const.MYSQL_USER, sae.const.MYSQL_PASS, sae.const.MYSQL_HOST, sae.const.MYSQL_PORT, sae.const.MYSQL_DB)
 #db = SQLAlchemy(app)
 
 
-
+from database import db
+from models import User
 
 
 
@@ -36,5 +36,3 @@ def hello_world2():
 
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
