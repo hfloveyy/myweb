@@ -20,14 +20,14 @@ from models import User,Blog,Comment
 
 
 
-admin = User(name='Test', email='test@example.com', password='1234567890', image='about:blank')
+admin2 = User(name='Test', email='test@example.com', password='1234567890', image='about:blank')
 
 
 
 @app.route('/')
 def index():
     
-    db.session.add(admin)
+    db.session.add(admin2)
     db.session.commit()
     return 'Hello World!'
 
