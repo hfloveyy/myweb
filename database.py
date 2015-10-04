@@ -2,7 +2,7 @@
 
 import sae.const
 from flaskext.sqlalchemy import SQLAlchemy
-from myweb import app
+from myapp import app
 
 
 
