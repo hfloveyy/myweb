@@ -28,8 +28,8 @@ from models import User,Blog,Comment
 def hello_world():
     admin = User(name='Test', email='test@example.com', password='1234567890', image='about:blank')
     if admin is not None:
-        #db.session.add(admin)
-        #db.session.commit()
+        db.session.add(admin)
+        db.session.commit()
         return 'great!'
     else:
         return 'Hello World!'
