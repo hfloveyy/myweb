@@ -20,7 +20,7 @@ from models import User,Blog,Comment
 
 
 
-admin2 = User(name='Test', email='test@example.com', password='1234567890', image='about:blank')
+admin2 = User(name='Test2', email='test@example.com2', password='12345678902', image='about:blank2')
 
 
 
