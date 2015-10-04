@@ -21,7 +21,7 @@ class User(db.Model):
         self.created_at = created_at
 
 
-
+'''
 class Blog(db.Model):
     """docstring for Blog"""
     id = db.Column(db.Integer, primary_key=True)
@@ -63,7 +63,7 @@ class Comment(db.Model):
         self.created_at = created_at
 
 
-        
+'''        
 
         
 
