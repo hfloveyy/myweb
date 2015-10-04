@@ -1,10 +1,10 @@
 # _*_ coding:utf-8 _*_
 
-import sae.const
+#import sae.const
 from flask import Flask
 #from flaskext.sqlalchemy import SQLAlchemy
 from flask import render_template
-#from myapp import app
+from myapp import app
 
 
 
