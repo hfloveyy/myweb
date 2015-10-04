@@ -16,10 +16,9 @@ app = Flask(__name__)
 
 from database import db
 
-from models import User
-''',Blog,Comment'''
+from models import User,Blog,Comment
 
-#db.create_all()
+db.create_all()
 
 admin = User(name='Test', email='test@example.com', password='1234567890', image='about:blank')
 
