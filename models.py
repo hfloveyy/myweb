@@ -12,6 +12,14 @@ class User(db.Model):
     image = db.Column(db.String(500), unique=True)
     created_at = db.Column(db.DateTime)
 
+    def __init__(self, email,password,admin,name,image,created_at):
+        self.email = email
+        self.password = password
+        self.admin = admin
+        self.name = name
+        self.image = image
+        self.created_at = created_at
+
 
 
 class Blog(db.Model):
