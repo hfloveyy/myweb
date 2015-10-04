@@ -22,7 +22,7 @@ class Blog(db.Model):
     user_image = db.Column(db.String(50), unique=True)
     name = db.Column(db.String(50), unique=True)
     summary = db.Column(db.String(50), unique=True)
-    content = db.Column(db.String(1000), unique=True)
+    content = db.Column(db.Text)
     created_at = db.Column(db.DateTime, unique=True)
 
 class Comment(db.Model):
@@ -31,8 +31,8 @@ class Comment(db.Model):
     blog_id = db.Column(db.String(50), unique=True)
     user_id = db.Column(db.String(50), unique=True)
     user_name = db.Column(db.String(50), unique=True)
-    user_image = db.Column(db.String(50), unique=True)
-    content = db.Column(db.String(1000), unique=True)
+    user_image = db.Column(db.String(500))
+    content = db.Column(db.Text)
     created_at = db.Column(db.DateTime, unique=True)
 
 
