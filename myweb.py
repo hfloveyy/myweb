@@ -16,7 +16,8 @@ app = Flask(__name__)
 
 from database import db
 
-from models import User''',Blog,Comment'''
+from models import User
+''',Blog,Comment'''
 
 #db.create_all()
 
