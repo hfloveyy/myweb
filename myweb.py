@@ -21,16 +21,14 @@ from models import User,Blog,Comment
 #db.create_all()
 
 
-admin = User(name='Test', email='test@example.com', password='1234567890', image='about:blank')
+
 
 
 @app.route('/')
 def hello_world():
-    
-    
-    
-    #db.session.add(admin)
-    #db.session.commit()
+    admin = User(name='Test', email='test@example.com', password='1234567890', image='about:blank')
+    db.session.add(admin)
+    db.session.commit()
     return 'Hello World!'
 
 @app.route('/hello')
