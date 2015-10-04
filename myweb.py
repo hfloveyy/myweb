@@ -16,16 +16,16 @@ app = Flask(__name__)
 
 from database import db
 
+from models import User
 
-
-
+admin = User('admin', 'admin@example.com')
 
 
 @app.route('/')
 def hello_world():
-    from models import User
+    
     db.create_all()
-    admin = User('admin', 'admin@example.com')
+    
     db.session.add(admin)
     db.session.commit()
     return 'Hello World!'
