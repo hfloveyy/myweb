@@ -44,7 +44,7 @@ def hello(name=None):
     return render_template('hello.html', name=name)
 
 
-@api
+#@api
 @app.route('/api/users')
 def api_get_users():
     users = User.query.all()
