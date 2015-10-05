@@ -29,9 +29,11 @@ def index():
     #admin3 = User(name='Test23', email='test@example.com32', password='123456789032', image='about:blank32')
     #db.session.add(admin3)
     #db.session.commit()
-    #admin = User.query.filter_by(name='Test').first()
-    users = User.query.all()
-    return render_template('test_users.html', users=users)
+    admin = User.query.filter_by(name='Test').first()
+    #users = User.query.all()
+    #return render_template('test_users.html', users=users)
+    blogs = Blog.query.all()
+    return render_template('blog.html',blogs=blogs,user=admin)
 
 
 
