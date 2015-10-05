@@ -1,5 +1,6 @@
 # _*_ coding:utf-8 _*_
 import json
+import functools
 
 
 def api(func):
