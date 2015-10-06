@@ -1,7 +1,7 @@
 # _*_ coding:utf-8 _*_
 
 from flask import Flask
-from flask.ext.restful import Api, Resource
+from flask.ext.restful import Api, Resource, fields, marshal_with
 from myapp import app
 from models import User,Blog,Comment
 
@@ -9,9 +9,15 @@ from models import User,Blog,Comment
 api = Api(app)
 
 
+resource_fields = {
+    'name': fields.String,
+    'address': fields.String, 
+}
+
 
 class UserAPI(Resource):
-    def get(self, id):
+    @marshal_with(resource_fields, envelope='resource')
+    def get(self, **kwargs):
         admin = User.query.filter_by(id=id).first()
         return admin
 
@@ -21,13 +27,14 @@ class UserAPI(Resource):
     def delete(self, id):
         pass
 
+
+        
+
 class AllUserAPI(Resource):
+    
     def get(self, id):
         users = User.query.all()
-        if users is None:
-            return 'None'
-        else:
-            return users
+        return users
 
     def put(self, id):
         pass
