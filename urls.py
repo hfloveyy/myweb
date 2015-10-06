@@ -34,23 +34,14 @@ def index():
 
 
 
-@app.route('/hello')
-@app.route('/hello/<name>')
-def hello(name=None):
-    test = {'tasks': 'hh'}
-    return jsonify(test)
 
 
 
-@app.route('/users')
-def api_get_users():
-    users = User.query.all()
-    return jsonify(users)
-    # 把用户的口令隐藏掉:
-    #for u in users:
-    #    u.password = '******'
-    #return render_template('test_users.html', users=users)
-    #return 'Test'
+
+
+
+
+
 
 
 

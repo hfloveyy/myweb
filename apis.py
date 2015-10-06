@@ -17,8 +17,8 @@ resource_fields = {
 
 class UserAPI(Resource):
     @marshal_with(resource_fields, envelope='resource')
-    def get(self, **kwargs):
-        admin = User.query.filter_by(id=1).first()
+    def get(self, id):
+        admin = User.query.filter_by(id=id).first()
         return admin
 
     def put(self, id):
