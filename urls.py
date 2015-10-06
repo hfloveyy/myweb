@@ -29,7 +29,7 @@ def index():
     #db.session.commit()
     admin = User.query.filter_by(name='Test').first()
     blogs = Blog.query.all()
-    return render_template('blog.html',blogs=blogs,user=admin)
+    return render_template('blog.html',blogs=blogs)
 
 
 _RE_MD5 = re.compile(r'^[0-9a-f]{32}$')
