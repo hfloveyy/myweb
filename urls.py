@@ -52,9 +52,9 @@ def api_get_users():
     # 把用户的口令隐藏掉:
     for u in users:
         u.password = '******'
-    user_dict = dict(users=users)
-    return render_template('test_users.html', users=users)
-    #return jsonify(user_dict)
+    #user_dict = dict(users=users)
+    #return render_template('test_users.html', users=users)
+    return jsonify(users)
 
 
 
