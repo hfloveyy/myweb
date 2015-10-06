@@ -37,10 +37,9 @@ _RE_MD5 = re.compile(r'^[0-9a-f]{32}$')
 @app.route('/register',methods=['GET','POST'])
 def register_user():
     if request.method == 'POST':
-        i = request.input(name='', email='', password='')
-        name = i.name.strip()
-        email = i.email.strip().lower()
-        password = i.password
+        name = request.form['name']
+        email = request.form['email']
+        password = request.form['password']
         if not name:
             raise APIValueError('name')
         if not email or not _RE_EMAIL.match(email):
