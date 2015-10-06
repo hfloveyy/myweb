@@ -11,7 +11,7 @@ api = Api(app)
 
 resource_fields = {
     'name': fields.String,
-    'address': fields.String, 
+    'password': fields.String, 
 }
 
 
