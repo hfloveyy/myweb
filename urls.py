@@ -1,7 +1,7 @@
 # _*_ coding:utf-8 _*_
 
 import re
-from flask import Flask, jsonify, request, url_for
+from flask import Flask, jsonify, request, url_for, redirect
 
 from flask import render_template,g
 from myapp import app
