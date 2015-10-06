@@ -55,7 +55,7 @@ def register_user():
             raise APIError('register:failed', 'email', 'Email is already in use.')
         user = User(name=name, email=email, password=password)
         db.session.add(user)
-        db.session.commit()
+        #db.session.commit()
         #return url_for('index')
         return 'post'
     else:
