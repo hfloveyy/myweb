@@ -12,7 +12,8 @@ api = Api(app)
 
 class UserAPI(Resource):
     def get(self, id):
-        pass
+        admin = User.query.filter_by(name='Test').first()
+        return admin
 
     def put(self, id):
         pass
@@ -23,7 +24,8 @@ class UserAPI(Resource):
 class AllUserAPI(Resource):
     def get(self, id):
         users = User.query.all()
-        return jsonify(users)
+
+        return users
 
     def put(self, id):
         pass
