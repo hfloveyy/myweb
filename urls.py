@@ -41,7 +41,7 @@ def index():
 @app.route('/hello')
 @app.route('/hello/<name>')
 def hello(name=None):
-    return {'error': 'Not found'}
+    return ''aa''
 
 
 
