@@ -9,14 +9,14 @@ from models import User,Blog,Comment
 api = Api(app)
 
 
-resource_fields = {
+user_fields = {
     'name': fields.String,
     'password': fields.String, 
 }
 
 
 class UserAPI(Resource):
-    @marshal_with(resource_fields, envelope='resource')
+    @marshal_with(user_fields, envelope='resource')
     def get(self, id):
         admin = User.query.filter_by(id=id).first()
         return admin
@@ -31,7 +31,7 @@ class UserAPI(Resource):
         
 
 class AllUserAPI(Resource):
-    @marshal_with(resource_fields, envelope='resource')
+    @marshal_with(user_fields, envelope='resources')
     def get(self, **kwargs):
         users = User.query.all()
         return users
