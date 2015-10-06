@@ -37,7 +37,7 @@ _RE_MD5 = re.compile(r'^[0-9a-f]{32}$')
 @app.route('/register',methods=['GET','POST'])
 def register_user():
     if request.method == 'POST':
-        name = request.form['name']
+        '''name = request.form['name']
         email = request.form['email']
         password = request.form['password']
         if not name:
@@ -51,7 +51,7 @@ def register_user():
             raise APIError('register:failed', 'email', 'Email is already in use.')
         user = User(name=name, email=email, password=password)
         db.session.add(user)
-        db.session.commit()
+        db.session.commit()'''
         return 'great'
     else:
         return render_template('register.html')
