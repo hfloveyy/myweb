@@ -54,8 +54,8 @@ def register_user():
         if user:
             raise APIError('register:failed', 'email', 'Email is already in use.')
         user = User(name=name, email=email, password=password)
-        g.db.session.add(user)
-        g.db.session.commit()
+        db.session.add(user)
+        db.session.commit()
         return 'ff'
         #return 'post'
     else:
