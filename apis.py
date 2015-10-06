@@ -32,5 +32,5 @@ class AllUserAPI(Resource):
         pass
 
 
-api.add_resource(AllUserAPI, '/users', endpoint = 'users')
-api.add_resource(UserAPI, '/users/<int:id>', endpoint = 'user')
+api.add_resource(AllUserAPI, '/api/users', endpoint = 'users')
+api.add_resource(UserAPI, '/api/users/<int:id>', endpoint = 'user')
