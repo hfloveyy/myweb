@@ -14,7 +14,7 @@ from myapp import app
 
 
 
-#from database import db
+from database import db
 from models import User,Blog,Comment
 
 from apis import AllUserAPI,UserAPI,APIValueError,APIError
