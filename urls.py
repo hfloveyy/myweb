@@ -53,7 +53,8 @@ def register_user():
         db.session.add(user)
         db.session.commit()
         return 'great'
-    return render_template('register.html')
+    else:
+        return render_template('register.html')
 
 
 
