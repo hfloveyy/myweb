@@ -1,7 +1,7 @@
 # _*_ coding:utf-8 _*_
 
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 from flask import render_template
 from myapp import app
@@ -32,8 +32,27 @@ def index():
     return render_template('blog.html',blogs=blogs,user=admin)
 
 
+_RE_MD5 = re.compile(r'^[0-9a-f]{32}$')
 
-
+@app.route('/register',methods=['POST'])
+def register_user():
+    i = request.input(name='', email='', password='')
+    name = i.name.strip()
+    email = i.email.strip().lower()
+    password = i.password
+    if not name:
+        raise APIValueError('name')
+    if not email or not _RE_EMAIL.match(email):
+        raise APIValueError('email')
+    if not password or not _RE_MD5.match(password):
+        raise APIValueError('password')
+    user = User.query.filter_by(email=email).first()
+    if user:
+        raise APIError('register:failed', 'email', 'Email is already in use.')
+    user = User(name, email, password)
+    db.session.add(user)
+    db.session.commit()
+    return render_template('register.html',user=user)
 
 
 
