@@ -12,7 +12,7 @@ api = Api(app)
 
 class UserAPI(Resource):
     def get(self, id):
-        admin = User.query.filter_by(name='Test').first()
+        admin = User.query.filter_by(id=1).first()
         return admin
 
     def put(self, id):
