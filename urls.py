@@ -56,7 +56,7 @@ def register_user():
         user = User(name=name, email=email, password=password)
         db.session.add(user)
         db.session.commit()
-        return 'ff'
+        return index()
         #return 'post'
     else:
         return render_template('register.html')
