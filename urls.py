@@ -13,11 +13,11 @@ from myapp import app
 
 
 
-from database import db
+
 
 from models import User,Blog,Comment
 
-
+from apis import AllUserAPI,UserAPI
 
 
 
@@ -41,7 +41,7 @@ def hello(name=None):
     return jsonify(test)
 
 
-
+'''
 @app.route('/api/users')
 def api_get_users():
     users = User.query.all()
@@ -50,7 +50,7 @@ def api_get_users():
         u.password = '******'
     #return render_template('test_users.html', users=users)
     return 'Test'
-
+'''
 
 
 
