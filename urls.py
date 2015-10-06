@@ -1,8 +1,8 @@
 # _*_ coding:utf-8 _*_
 
-#import sae.const
+
 from flask import Flask, jsonify
-#from flaskext.sqlalchemy import SQLAlchemy
+
 from flask import render_template
 from myapp import app
 
@@ -10,9 +10,7 @@ from myapp import app
 
 
 
-#app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] =  'mysql://%s:%s@%s:%s/%s' % (sae.const.MYSQL_USER, sae.const.MYSQL_PASS, sae.const.MYSQL_HOST, sae.const.MYSQL_PORT, sae.const.MYSQL_DB)
-#db = SQLAlchemy(app)
+
 
 
 from database import db
@@ -30,8 +28,6 @@ def index():
     #db.session.add(admin3)
     #db.session.commit()
     admin = User.query.filter_by(name='Test').first()
-    #users = User.query.all()
-    #
     blogs = Blog.query.all()
     return render_template('blog.html',blogs=blogs,user=admin)
 
@@ -41,8 +37,12 @@ def index():
 @app.route('/hello')
 @app.route('/hello/<name>')
 def hello(name=None):
-    test = {'tasks': 'hh'}
-    return jsonify(test)
+    users = User.query.all()
+    # 把用户的口令隐藏掉:
+    for u in users:
+        u.password = '******'
+    #return render_template('test_users.html', users=users)
+    return jsonify(dict(users=users))
 
 
 
@@ -53,7 +53,7 @@ def api_get_users():
     for u in users:
         u.password = '******'
     #return render_template('test_users.html', users=users)
-    return jsonify(dict(users))
+    return jsonify(dict(users=users))
 
 
 
