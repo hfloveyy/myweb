@@ -31,8 +31,8 @@ class UserAPI(Resource):
         
 
 class AllUserAPI(Resource):
-    
-    def get(self, id):
+    @marshal_with(resource_fields, envelope='resource')
+    def get(self, **kwargs):
         users = User.query.all()
         return users
 
