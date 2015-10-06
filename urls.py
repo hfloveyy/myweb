@@ -51,7 +51,8 @@ def api_get_users():
     # 把用户的口令隐藏掉:
     for u in users:
         u.password = '******'
-    return u.name
+    user_dict = dict(users=users)
+    return jsonify(user_dict)
 
 
 
