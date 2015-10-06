@@ -34,7 +34,7 @@ def index():
 
 _RE_MD5 = re.compile(r'^[0-9a-f]{32}$')
 
-@app.route('/register',methods=['POST'])
+@app.route('/register',methods=['GET','POST'])
 def register_user():
     i = request.input(name='', email='', password='')
     name = i.name.strip()
