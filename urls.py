@@ -38,7 +38,7 @@ _RE_MD5 = re.compile(r'^[0-9a-f]{32}$')
 def register_user():
     if request.method == 'POST':
         name = request.form['name']
-        '''email = request.form['email']
+        email = request.form['email']
         password = request.form['password']
         if not name:
             raise APIValueError('name')
@@ -49,7 +49,7 @@ def register_user():
         user = User.query.filter_by(email=email).first()
         if user:
             raise APIError('register:failed', 'email', 'Email is already in use.')
-        user = User(name=name, email=email, password=password)
+        '''user = User(name=name, email=email, password=password)
         db.session.add(user)
         db.session.commit()'''
         return name
