@@ -46,12 +46,12 @@ def register_user():
             raise APIValueError('email')
         if not password or not _RE_MD5.match(password):
             raise APIValueError('password')
-        user = User.query.filter_by(email=email).first()
+        '''user = User.query.filter_by(email=email).first()
         if user:
             raise APIError('register:failed', 'email', 'Email is already in use.')
         user = User(name=name, email=email, password=password)
         db.session.add(user)
-        db.session.commit()
+        db.session.commit()'''
         return name
     else:
         return render_template('register.html')
