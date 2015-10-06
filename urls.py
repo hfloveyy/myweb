@@ -41,17 +41,17 @@ def index():
 @app.route('/hello')
 @app.route('/hello/<name>')
 def hello(name=None):
-    return render_template('hello.html', name=name)
+    return {'error': 'Not found'}
 
 
-@api
+
 @app.route('/api/users')
 def api_get_users():
     users = User.query.all()
     # 把用户的口令隐藏掉:
     for u in users:
         u.password = '******'
-    return dict(users=users)
+    return 
 
 
 
