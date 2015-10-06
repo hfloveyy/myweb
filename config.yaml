@@ -10,3 +10,6 @@ libraries:
 
 - name: jinja2
   version: "2.6"
+
+- name: flask-restful
+  version: "0.3.4"
