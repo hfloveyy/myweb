@@ -5,7 +5,7 @@ from flask import Flask
 #from flaskext.sqlalchemy import SQLAlchemy
 from flask import render_template
 from myapp import app
-from apis import api
+
 
 
 
