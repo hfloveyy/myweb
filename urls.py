@@ -41,7 +41,8 @@ def index():
 @app.route('/hello')
 @app.route('/hello/<name>')
 def hello(name=None):
-    return jsonify({'tasks': 'hh'})
+    test = {'tasks': 'hh'}
+    return jsonify(test)
 
 
 
