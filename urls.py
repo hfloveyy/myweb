@@ -1,7 +1,7 @@
 # _*_ coding:utf-8 _*_
 
 #import sae.const
-from flask import Flask
+from flask import Flask, jsonify
 #from flaskext.sqlalchemy import SQLAlchemy
 from flask import render_template
 from myapp import app
@@ -41,7 +41,7 @@ def index():
 @app.route('/hello')
 @app.route('/hello/<name>')
 def hello(name=None):
-    return 'aa'
+    return jsonify({'tasks': tasks})
 
 
 
