@@ -1,7 +1,7 @@
 # _*_ coding:utf-8 _*_
 
 import re
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, url_for
 
 from flask import render_template
 from myapp import app
@@ -14,7 +14,7 @@ from myapp import app
 
 
 
-from database import db
+#from database import db
 from models import User,Blog,Comment
 
 from apis import AllUserAPI,UserAPI,APIValueError,APIError
