@@ -1,6 +1,6 @@
 # _*_ coding:utf-8 _*_
 
-from flask import Flask, jsonify
+from flask import Flask
 from flask.ext.restful import Api, Resource
 from myapp import app
 from models import User,Blog,Comment
