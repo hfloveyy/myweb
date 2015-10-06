@@ -50,8 +50,8 @@ def register_user():
         if user:
             raise APIError('register:failed', 'email', 'Email is already in use.')
         user = User(name=name, email=email, password=password)
-        '''db.session.add(user)
-        db.session.commit()'''
+        db.session.add(user)
+        db.session.commit()
         return name
     else:
         return render_template('register.html')
