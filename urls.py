@@ -49,9 +49,9 @@ def register_user():
     user = User.query.filter_by(email=email).first()
     if user:
         raise APIError('register:failed', 'email', 'Email is already in use.')
-    user = User(name, email, password)
-    db.session.add(user)
-    db.session.commit()
+    #user = User(name, email, password)
+    #db.session.add(user)
+    #db.session.commit()
     return render_template('register.html',user=user)
 
 
