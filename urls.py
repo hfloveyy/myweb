@@ -31,7 +31,7 @@ def index():
     #db.session.commit()
     admin = User.query.filter_by(name='Test').first()
     #users = User.query.all()
-    #return render_template('test_users.html', users=users)
+    #
     blogs = Blog.query.all()
     return render_template('blog.html',blogs=blogs,user=admin)
 
@@ -53,7 +53,8 @@ def api_get_users():
     for u in users:
         u.password = '******'
     user_dict = dict(users=users)
-    return jsonify(user_dict)
+    return render_template('test_users.html', users=users)
+    #return jsonify(user_dict)
 
 
 
