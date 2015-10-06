@@ -1,7 +1,7 @@
 # _*_ coding:utf-8 _*_
 
 import re
-from flask import Flask, jsonify, request, url_for
+from flask import Flask, jsonify, request
 
 from flask import render_template
 from myapp import app
@@ -31,8 +31,12 @@ def index():
     blogs = Blog.query.all()
     return render_template('blog.html',blogs=blogs)
 
+
+
 _RE_EMAIL = re.compile(r'^[a-z0-9\.\-\_]+\@[a-z0-9\-\_]+(\.[a-z0-9\-\_]+){1,4}$')
 _RE_MD5 = re.compile(r'^[0-9a-f]{32}$')
+
+
 
 @app.route('/register',methods=['GET','POST'])
 def register_user():
