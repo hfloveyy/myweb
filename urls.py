@@ -3,7 +3,7 @@
 import re
 from flask import Flask, jsonify, request, url_for
 
-from flask import render_template
+from flask import render_template,g
 from myapp import app
 
 
@@ -54,9 +54,9 @@ def register_user():
         if user:
             raise APIError('register:failed', 'email', 'Email is already in use.')
         user = User(name=name, email=email, password=password)
-        db.session.add(user)
-        #db.session.commit()
-        url_for('index')
+        g.db.session.add(user)
+        g.db.session.commit()
+        return 'ff'
         #return 'post'
     else:
         return render_template('register.html')
