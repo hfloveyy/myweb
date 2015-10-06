@@ -1,6 +1,6 @@
 # _*_ coding:utf-8 _*_
 
-from flask import Flask
+from flask import Flask, jsonify
 from flask.ext.restful import Api, Resource
 from myapp import app
 from models import User,Blog,Comment
@@ -23,7 +23,7 @@ class UserAPI(Resource):
 class AllUserAPI(Resource):
     def get(self, id):
         users = User.query.all()
-        return users
+        return jsonify(users)
 
     def put(self, id):
         pass
