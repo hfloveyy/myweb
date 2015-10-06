@@ -12,7 +12,7 @@ api = Api(app)
 
 class UserAPI(Resource):
     def get(self, id):
-        admin = User.query.filter_by(id=1).first()
+        admin = User.query.filter_by(id=id).first()
         return admin
 
     def put(self, id):
@@ -24,14 +24,15 @@ class UserAPI(Resource):
 class AllUserAPI(Resource):
     def get(self, id):
         users = User.query.all()
-
-        return users
+        if users is None:
+            return 'None'
+        else:
+            return users
 
     def put(self, id):
         pass
 
-    def delete(self, id):
-        pass
+
 
 
 api.add_resource(AllUserAPI, '/api/users', endpoint = 'users')
