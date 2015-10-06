@@ -29,7 +29,11 @@ def index():
     #db.session.commit()
     admin = User.query.filter_by(name='Test').first()
     blogs = Blog.query.all()
-    return render_template('blog.html',blogs=blogs)
+    return render_template('blogs.html',blogs=blogs)
+
+
+
+
 
 
 
@@ -57,7 +61,6 @@ def register_user():
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('index'))
-        #return 'post'
     else:
         return render_template('register.html')
 
