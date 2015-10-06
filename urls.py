@@ -42,9 +42,9 @@ def register_user():
         password = request.form['password']
         if not name:
             raise APIValueError('name')
-        '''if not email or not _RE_EMAIL.match(email):
+        if not email or not _RE_EMAIL.match(email):
             raise APIValueError('email')
-        if not password or not _RE_MD5.match(password):
+        '''if not password or not _RE_MD5.match(password):
             raise APIValueError('password')
         user = User.query.filter_by(email=email).first()
         if user:
